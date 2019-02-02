@@ -3,10 +3,10 @@ pragma solidity >=0.4.22 <0.6.0;
 contract HolCoin{
   address owner;
   string name;
-  bytes32 symbol;
+  string symbol;
   uint256 totalHolCoins;
 
-  constructor(string memory _name, bytes32 _symbol, uint256 _totalHolCoins) public {
+  constructor(string memory _name, string memory _symbol, uint256 _totalHolCoins) public {
     owner = msg.sender;
     name = _name;
     symbol = _symbol;
