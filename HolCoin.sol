@@ -6,14 +6,15 @@ contract HolCoin{
   string symbol;
   uint256 totalHolCoins;
 
+  mapping (address => uint256) public balance;
+  
   constructor(string memory _name, string memory _symbol, uint256 _totalHolCoins) public {
     owner = msg.sender;
     name = _name;
     symbol = _symbol;
     totalHolCoins = _totalHolCoins;
+    balance[owner] = totalHolCoins;
    }
-
-  mapping (address => uint256) public balance;
 
   function totalSupply() view public returns (uint256){
       return totalHolCoins;
