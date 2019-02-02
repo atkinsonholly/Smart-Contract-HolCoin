@@ -24,7 +24,7 @@ contract HolCoin{
   }
 
   function transfer(address _to, uint256 _value) public returns (bool){
-      if ( balanceOf(msg.sender) > _value) {
+      if (balance[msg.sender] > _value) {
           address _from = msg.sender;
           owner = _to;
           emit Transfer(_from, _to, _value);
